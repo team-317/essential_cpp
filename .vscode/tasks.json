@@ -9,10 +9,11 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileDirname}\\bin\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${fileDirname}",
+                "explation":"cwd 即指当前源代码文件的工作目录：current Working Directory"
             },
             "problemMatcher": [
                 "$gcc"
