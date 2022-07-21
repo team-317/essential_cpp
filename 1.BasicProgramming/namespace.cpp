@@ -27,7 +27,7 @@ int main(){
     printf("使用printf，可以导入stdio.h直接使用\n");     // 此时无需导入命名空间便可使用
 
     cout<<"使用cout，"
-        <<"在使用include后还需使用using入名称"
+        <<"在使用include后还需使用using导入名称"
         <<endl;        // 需要先导入名称，或导入命名空间
 
     vector<int> varray(10,-1);
@@ -41,6 +41,7 @@ int main(){
     //区分字符和字符串
     char ch[] = "B";    // 用双引号的就是字符串，如果写为 char ch = "B"; 将会报错
     char mych = 'B';      // 用单引号则是字符，要严格区分
+    char ESC1 = '\n', ESC2 = '\t';  // 转义字符也是字符，不是字符串
 
 
     // swtich(mark)中的mark必须是整型（可以是字符）或枚举类型
