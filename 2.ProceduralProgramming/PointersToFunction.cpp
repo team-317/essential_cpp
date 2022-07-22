@@ -23,7 +23,8 @@ vector<int> *pell_seq(int n){
     if (n<0 || n>8) return 0;
     int array[]={1,2,5,12,29,70,169,408};
     vector<int> *varray = new vector<int>(array, array+5);
-    return varray;}
+    return varray;
+}
 int main(){
     // 函数指针为vector<int> *(*seq_ptr)(int)
     // 函数指针也就是将函数名改为指针的形式，函数指针数组同理，如下
