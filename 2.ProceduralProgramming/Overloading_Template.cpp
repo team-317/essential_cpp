@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 using std::vector;
 /*-------------------------重载和模板函数-------------------------*/
-// 函数重载要求两个函数名的返回类型相同，
+// 函数重载要求两个函数名的返回类型相同，形参的类型、命名和数量都可以不同
 // 如果同一命名空间中的两个函数名相同，则这两个是重载函数，两者的返回类型必须相同
 void display(vector<int> iarray){
     for(auto iter=iarray.begin(); iter<iarray.end(); iter++){

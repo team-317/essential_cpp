@@ -30,7 +30,7 @@ int main(){
 
     str.append(" Welcome to this world.");  // 向字符串对象后添加字符串，同'+'运算
     str.push_back('\n');            // 向字符串后面添加一个字符
-    string sub = str.substr(0,13);  // 获取字串
+    string sub = str.substr(0,13);  // 获取子串
     sub.erase(6);                   // 清除第六位之后的字符
     // sub.erase(6, 7);
     sub.insert(6, "Welcome to this world!"); // 向第六位之后添加字符
@@ -44,7 +44,6 @@ int main(){
     int first = myvector.front();   // 访问第一个元素
     int last = myvector.back();     // 访问最后一个元素
     int size = myvector.max_size();
-
 
 
     // 栈及相关操作
