@@ -1,18 +1,15 @@
+#include<string>
+#include<memory>
 #include<iostream>
-#include<algorithm>
-#include<vector>
-using namespace std;
+using std::cout, std::endl;
+using std::string;
+using std::shared_ptr;
+using std::make_shared;
 int main(){
-    auto a = new int[1024*1024*32]{};
-    int sum = 0, index = 0;
-    int *p = a;
-    int *add = a;
-    while(index<32*1024*1024){
-        p += 256*1024;
-        index += 256*1024;
-        add = &(a[index]);
-        *p = 100;
-        sum += *(p);
-    }
-    return 0;
+	auto s = "adkfjad";
+	auto i = 10;
+	shared_ptr<int> j = make_shared<int>(i);
+	shared_ptr< string> ps (new string ("I reigned lonely as a cloud."));
+	// shared_ptr<int> p = make_shared<int>(42);
+	cout << ps << endl;
 }
