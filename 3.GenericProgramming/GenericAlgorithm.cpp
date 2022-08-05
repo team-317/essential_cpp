@@ -27,6 +27,7 @@ int main(){
     // 传递lambda表达式实现降序排序，lambda表达式的返回类型为bool类型
     sort(ivec.begin(), ivec.end(),
             [](int a, int b){return a>b;}); 
+    sort(ivec.begin(), ivec.end(), greater<int>());
     // 使用反向迭代器实现降序排序
     sort(ivec.rbegin(), ivec.rend());   
 

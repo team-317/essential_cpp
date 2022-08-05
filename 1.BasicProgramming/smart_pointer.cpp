@@ -65,7 +65,8 @@ void compare_pointer(){
                             });
     s = nullptr;    // 将nullptr赋给智能指针，从而释放指针
     cout << "complete release smart pointer" << endl;
-    // 传统指针的释放
+    
+    // 传统指针不会自动释放
     Simple_class* q = new Simple_class("alien");
     q = nullptr;    // 同样释放指针
     cout << "complete release class pointer" << endl;

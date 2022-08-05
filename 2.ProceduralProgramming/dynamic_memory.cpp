@@ -16,7 +16,7 @@ vector<int> *memoryLeak(){
     return parray;
 }
 int main(){
-    // memoryLeak();   // 此处设断点
+    memoryLeak();   // 此处设断点
     // 查看资源管理器，memoryLeak执行前后内存增加300多MB，来自语句2的执行
     // 语句1在执行后也会使内存增加300+MB，但退出memoryLeak后这些内存会自动释放
     // 语句1申请的空间位于栈中，不会出现内存泄漏，
@@ -27,9 +27,9 @@ int main(){
     // delete p;
 
     // 对于数组，也可以使用new
-    int *q = new int[1024*1024]();   // 最后加上的()使得数组元素进行初始化
-    std::cout<<q[1024*1024]<<std::endl; // 数组不会检查越界错误，该语句可以正常执行
-    delete [] q;    //数组的释放需要加[]
+    // int *q = new int[1024*1024]();   // 最后加上的()使得数组元素进行初始化
+    // std::cout<<q[1024*1024]<<std::endl; // 数组不会检查越界错误，该语句可以正常执行
+    // delete [] q;    //数组的释放需要加[]
 
     // 下面的语句会报错"Segmentation fault"，编译时报错，而非运行时!!!
     // 因为栈的大小有限，这里栈大小约为1MB，而这个数组大小为128MB
