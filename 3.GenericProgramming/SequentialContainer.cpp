@@ -28,6 +28,26 @@ void string_op(){
     sub.insert(6, "Welcome to this world!"); // 向第六位之后添加字符
     auto index1 = str.find(',');     // 查找','出现的下标
     auto index2 = str.find_first_of(','); // 查找','第一次出现的位置
+
+    // example: 提取出 "0:start:4"中由':'分割的三个子串
+    string a_string = "0:start:4";
+    int pos1 = a_string.find_first_of(":");      // 查找第一个":"号的位置
+    int pos2 = a_string.find_first_of(":", pos1+1);  //查找第二个":"号的位置
+    auto substr1 = a_string.substr(0, pos1);      // 获得第一个子串，第二个参数为子串长度
+    auto substr2 = a_string.substr(pos1+1, pos2-pos1-1);
+    auto substr3 = a_string.substr(pos2+1);
+    cout << "The splited sub string: "
+         << substr1 << "  "
+         << substr2 << "  "
+         << substr3 << endl;
+    // 另一种使用字符数组进行读取的方式
+    char a[10], b[10], c[10];
+    // 使用c_str将字符串改为字符数组，[^:]是正则表达式，表示不包含":"的字符
+    sscanf(a_string.c_str(), "%[^:]:%[^:]:%[^ ]", a, b, c);
+    cout << "Another way with char operator: "
+         << a << "  "
+         << b << "  "
+         << c << endl;
 }
 
 /* ------vector相关的操作--------- */
@@ -47,6 +67,8 @@ void vector_op(){
 
 /* ------stack相关的操作--------- */
 void stack_op(){
+    int array[9] = {9,3,4,1,7,2,5,8,6}; // 拷贝初始化，使用了等号即为拷贝初始化！！！
+    vector<int> ivec(begin(array), end(array));
     stack<int> mystack; // 定义一个空栈，注意：没有"stack<int> emptyStack();"这样的构造方式
     stack<int, vector<int>> istack(ivec);   // 由已存在的容器来初始化栈
 
@@ -60,11 +82,13 @@ void stack_op(){
 
 /* ------queue相关的操作--------- */
 void queue_op(){
+    int array[9] = {9,3,4,1,7,2,5,8,6}; // 拷贝初始化，使用了等号即为拷贝初始化！！！
+    vector<int> ivec(begin(array), end(array));
     queue<int> iqueue;
     queue<int, vector<int>> myqueue(ivec);
     iqueue.push(3); // 入队操作
     iqueue.pop();   // 出队操作，不返回出队元素！！！
-    int elem = iqueue.fornt();  iqueue.pop();   // 常用出队操作：先访问队头元素，再出队
+    int elem = iqueue.front();  iqueue.pop();   // 常用出队操作：先访问队头元素，再出队
 
     int qfirst = myqueue.front(); // 返回队首元素
     int qlast=myqueue.back();     // 返回队尾元素
